@@ -8,6 +8,9 @@ def isDominant(A):
     return True
 
 def jacobi(A,x,b):
+    if isDominant(A) == False:
+        print("The matrix is not diagonally dominant")
+        return
     size = len(A)
     iteration = 0
     epsilon = 0.001
@@ -27,6 +30,9 @@ def jacobi(A,x,b):
     print('iteration ', iteration + 1, ': ', x)
 
 def gaussSeidel(A,x,b):
+    if isDominant(A) == False:
+        print("The matrix is not diagonally dominant")
+        return
     size = len(A)
     iteration = 0
     epsilon = 0.001
