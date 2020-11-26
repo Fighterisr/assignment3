@@ -8,6 +8,7 @@ def isDominant(A):
     return True
 
 def jacobi(A,x,b):
+    x = x.copy()
     if isDominant(A) == False:
         print("The matrix is not diagonally dominant")
         return
@@ -30,6 +31,7 @@ def jacobi(A,x,b):
     print('iteration ', iteration + 1, ': ', x)
 
 def gaussSeidel(A,x,b):
+    x = x.copy()
     if isDominant(A) == False:
         print("The matrix is not diagonally dominant")
         return
@@ -59,12 +61,6 @@ b = [2, 6, 5]
 
 print('Jacobi method:')
 jacobi(A,x,b)
-
-A = [[4, 2, 0],
-     [2, 10, 4],
-     [0, 4, 5]]
-x = [0, 0, 0]
-b = [2, 6, 5]
 
 print('\ngauss-Seidel method:')
 gaussSeidel(A,x,b)
